@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "771913965562",
+    "project_id": "iot-smart-agriculture-cbe0a",
+    "storage_bucket": "iot-smart-agriculture-cbe0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771913965562:android:dfb9d3441ee478d3598e43",
+        "android_client_info": {
+          "package_name": "com.example.iotdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771913965562-6log0fo717spp4pv37rmsk0q2obl1q43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCpmVkhXjbhs3Ak6PBmSvk4Y7ZUy3aY5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771913965562-6log0fo717spp4pv37rmsk0q2obl1q43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

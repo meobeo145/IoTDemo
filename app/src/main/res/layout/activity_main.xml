@@ -85,7 +85,8 @@
             android:layout_height="20dp"
             android:layout_below="@+id/txtTemperature"
             android:layout_margin="10dp"
-            android:progress="26" />
+
+             />
 
         <TextView
             android:id="@+id/txtHumidity"
@@ -105,7 +106,7 @@
             android:layout_below="@+id/txtHumidity"
             android:layout_width="300dp"
             android:layout_height="20dp"
-            android:progress="92"/>
+            />
 
         <TextView
             android:id="@+id/txtLight"
@@ -123,8 +124,8 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="300dp"
             android:layout_height="20dp"
-            android:progress="32"
             android:layout_below="@+id/txtLight"
+            android:max="2000"
             android:layout_margin="10dp"/>
     </RelativeLayout>
 
