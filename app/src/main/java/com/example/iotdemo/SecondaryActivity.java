@@ -34,8 +34,8 @@ public class SecondaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent=getIntent();
-        String stringValue = intent.getStringExtra("mac_device");
+//        Intent intent=getIntent();
+//        String stringValue = intent.getStringExtra("mac_device");
 
         database= FirebaseDatabase.getInstance();
         mData = database.getReference();
@@ -50,10 +50,12 @@ public class SecondaryActivity extends AppCompatActivity {
         mData.child("Devices").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Device device= snapshot.child(stringValue).getValue(Device.class);
+//                Device device= snapshot.child(stringValue).getValue(Device.class);
+                    Device device= snapshot.getValue(Device.class);
                     temperature.setProgress((int) Float.parseFloat(device.getTemperature()));
                     light.setProgress((int) Float.parseFloat(device.getLight()));
                     humidity.setProgress((int) Float.parseFloat(device.getHumidity()));
+
             }
 
             @Override
@@ -62,18 +64,14 @@ public class SecondaryActivity extends AppCompatActivity {
             }
         });
 
-        turnOnLight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(SecondaryActivity.this, "Đã bật đèn", Toast.LENGTH_LONG).show();
-            }
+        turnOnLight.setOnClickListener(v -> {
+//                Toast.makeText(SecondaryActivity.this, "Đã bật đèn", Toast.LENGTH_LONG).show();
+            mData.child("control").child("led").setValue(1);
         });
 
-        turnOffLight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(SecondaryActivity.this, "Đã tắt đèn", Toast.LENGTH_LONG).show();
-            }
+        turnOffLight.setOnClickListener(v -> {
+//                Toast.makeText(SecondaryActivity.this, "Đã tắt đèn", Toast.LENGTH_LONG).show();
+            mData.child("control").child("led").setValue(0);
         });
 
     }
