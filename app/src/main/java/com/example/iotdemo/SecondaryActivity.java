@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,10 @@ public class SecondaryActivity extends AppCompatActivity {
     private ProgressBar light;
     private ProgressBar humidity;
 
+    private TextView txtShowTemp;
+    private TextView txtShowHumi;
+    private TextView txtShowLight;
+
     private ImageButton turnOffLight;
     private ImageButton turnOnLight;
     @Override
@@ -44,6 +49,10 @@ public class SecondaryActivity extends AppCompatActivity {
         light = findViewById(R.id.proBarLight);
         humidity= findViewById(R.id.proBarHumidity);
 
+        txtShowHumi = findViewById(R.id.txtShowHumi);
+        txtShowLight = findViewById(R.id.txtShowLight);
+        txtShowTemp = findViewById(R.id.txtShowTemp);
+
         turnOffLight = findViewById(R.id.imageButtonTurnOff);
         turnOnLight = findViewById(R.id.imageButtonTurnOn);
 
@@ -55,7 +64,9 @@ public class SecondaryActivity extends AppCompatActivity {
                     temperature.setProgress((int) Float.parseFloat(device.getTemperature()));
                     light.setProgress((int) Float.parseFloat(device.getLight()));
                     humidity.setProgress((int) Float.parseFloat(device.getHumidity()));
-
+                    txtShowHumi.setText(device.getHumidity() + "%");
+                    txtShowLight.setText(device.getLight() + " lx");
+                    txtShowTemp.setText(device.getTemperature() + " 'C");
             }
 
             @Override
